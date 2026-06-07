@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dajun</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>( ｣ﾟДﾟ)｣=⚾  順番抽選アプリ『Dajun!』 ❚⊂(ﾟДﾟ,,)</h1>
+
+
+<!-- Top page -->
+
+<div id="class-page">
+    <h2>クラス選択</h2>
+    <ul id="class-list">
+        <li>プログラミング火曜クラス（テスト用）</li>
+    </ul>
+    <input type="text" id="class-name-input" placeholder="クラス名を入力">
+    <button id="add-class-btn">追加</button>
+</div>
+
+
+<!-- スレッド選択 -->
+<!-- スレッド選択 -->
+<!-- スレッド選択 -->
+
+
+<div id="session-page">
+    <button class="back-btn">← クラス選択に戻る</button>
+    <h2>試合表</h2>
+    <ul id="thread-list">
+      <li>テスト 6月9日 火曜クラス</li>
+    </ul>
+    <input type="text" id="thread-name-input" placeholder="例：◯月◯日 JS⑤">
+    <button id="add-thread-btn">新スレッド作成</button>
+</div>
+
+
+<!-- オーダーページ -->
+<!-- オーダーページ -->
+<!-- オーダーページ -->
+
+
+<div id="order-page">
+    <button class="back-btn-to-session">← 試合表に戻る</button>
+    <button id="back-to-top-btn">🏠 クラス選択に戻る</button>
+<h2 id="current-thread-title">◯月◯日 火曜クラス 課題打順</h2>    
+
+
+    <!-- メンバーの入力フォーム -->
+    <div class="form-row">
+        <p class="input-nickname">ニックネーム：<input type="text" id="uname"></p>
+        <p class="input-product">プロダクトタイトル：<input type="text" id="product-title"></p>
+    </div>
+        <p>一言メモ：<input type="text" id="memo"></p>
+    <button id="entry-btn">登録</button>
+
+    <!-- 打順表のテーブル（表） -->
+    <table border="1" style="width: 100%; margin-top: 20px; text-align: center;">
+        <thead>
+            <tr>
+                <th>打順</th>
+                <th>打者（名前）</th>
+                <th>バット（プロダクト）</th>
+                <th>今日のスウィングフォーム（メモ）</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="order-table-body">
+            <!-- 最初に見せる空の枠（まずは3つ） -->
+            <tr><td>?</td><td>（空席）</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>?</td><td>（空席）</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>?</td><td>（空席）</td><td>-</td><td>-</td><td>-</td></tr>
+        </tbody>
+    </table>
+
+        <!-- オーダーボタン（右下） -->
+    <div style="text-align: right;">
+        <button id="order-submit-btn">📃 オーダー！</button>
+    </div>
+
+
+
+</div>
+
+
+
+<!-- オーダー演出 -->
+
+<div id="director-overlay">
+    <img id="director-img" src="" alt="監督">
+    <div id="manga-lines"></div>
+</div>
+
+
+<div id="match-result-page">
+    <h2 id="result-thread-title">◯月◯日 火曜クラス 確定打順</h2>
+    <div style="text-align: center; margin: 20px 0;">
+        <button id="play-ball-btn" style="font-size: 20px; padding: 10px 20px; margin-right: 10px; background-color: #ff9800; color: white; border: none; border-radius: 5px; cursor: pointer;">⚾ Play Ball</button>
+        <button id="game-set-btn" style="font-size: 20px; padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">🏁 Game Set</button>
+    </div>
+
+    <!-- 打順表テーブル -->
+    <table border="1" style="width: 100%; text-align: center;">
+        <thead>
+            <tr>
+                <th>打順</th>
+                <th>打者（名前）</th>
+                <th>バット（プロダクト）</th>
+                <th>今日のスウィングフォーム（メモ）</th>
+            </tr>
+        </thead>
+        <tbody id="result-table-body">
+        </tbody>
+    </table>
+</div>
+
+
+<div id="playball-overlay">
+    <div id="playball-text">Play Ball !!</div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

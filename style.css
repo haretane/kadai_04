@@ -1,0 +1,258 @@
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #f4f6f8; /* 爽やかな薄いグレー */
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 全体のコンテナ */
+#class-page, #session-page, #order-page, #match-result-page {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* フワッとした上品な影 */
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* ページ切り替えの非表示ルール */
+#session-page, #order-page, #match-result-page {
+    display: none;
+}
+
+/* 大見出し */
+h1 {
+    color: #1a4d32; 
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 20px;
+    border-left: 5px solid #1a4d32; 
+    padding-left: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/*  入力欄 & ボタンのデザイン */
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.2s;
+}
+input[type="text"]:focus {
+    border-color: #1a4d32; 
+    outline: none;
+}
+
+p {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+button {
+    background-color: #1a4d32;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+button:hover {
+    background-color: #113321;
+}
+button:active {
+    transform: scale(0.98);
+}
+
+/* 戻るボタン */
+.back-btn, .back-btn-to-session, #back-to-top-btn {
+    background-color: #e0e0e0;
+    color: #333333;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.back-btn:hover, .back-btn-to-session:hover, #back-to-top-btn:hover {
+    background-color: #d5d5d5;
+}
+
+/* 「オーダー！」ボタン */
+#order-submit-btn {
+    background-color: #2b4c7e;
+    font-size: 18px;
+    padding: 12px 24px;
+    margin: 40px;
+    box-shadow: 0 4px 12px rgba(43, 76, 126, 0.3);
+}
+#order-submit-btn:hover {
+    background-color: #1a3052;
+}
+
+/* ==========================================
+   2. クラス・試合リスト
+   ========================================== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+ul li {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #334155;
+    transition: all 0.2s;
+}
+ul li:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e1;
+    transform: translateX(4px); 
+}
+
+/* ==========================================
+    3. 打順表
+   ========================================== */
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #2c3e50; 
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 10px;
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 15px;
+    color: #4a5568;
+}
+
+/* ストライプ */
+tr:nth-child(even) td {
+    background-color: #fafbfc;
+}
+
+/* キャンセルボタン */
+.cancel-btn {
+    background-color: #e53e3e;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+.cancel-btn:hover {
+    background-color: #c53030;
+}
+
+
+.form-row {
+    display: flex;
+    gap: 15px;  
+}
+.input-nickname {
+    width: 180px;   
+    flex-shrink: 0;   
+}
+.input-product {
+    flex-grow: 1;   
+}
+
+
+
+
+
+/* ==========================================
+    演出
+   ========================================== */
+#director-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; 
+    z-index: 1000; 
+}
+
+#director-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#manga-lines {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from 0deg, #000000 0deg 1.5deg, transparent 1.5deg 4deg, #000000 4deg 4.8deg, transparent 4.8deg 7deg);
+    -webkit-mask-image: radial-gradient(circle, transparent 35%, black 60%);
+    mask-image: radial-gradient(circle, transparent 35%, black 60%);
+    opacity: 0.85; 
+    pointer-events: none;
+}
+
+#playball-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    z-index: 2000; 
+}
+
+#playball-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    font-weight: bold;
+    color: #f5940d; 
+    text-shadow: 3px 3px 0px #333; 
+    white-space: nowrap;
+}
