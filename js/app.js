@@ -324,8 +324,8 @@ $("#order-submit-btn").on("click", function() {
 
 $("#play-ball-btn").on("click", function() {
     $("#playball-overlay").fadeIn(300, function() {
-        $("#match-result-page").hide();
-        $("#order-page").show();
+        $("#order-page").hide();
+        $("#match-result-page").show();
         setTimeout(function() {
             $("#playball-overlay").fadeOut(1000);
         }, 1000);
